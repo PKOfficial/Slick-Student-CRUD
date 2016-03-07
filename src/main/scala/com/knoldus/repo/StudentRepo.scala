@@ -36,8 +36,6 @@ trait StudentRepo extends StudentTable {
     db.run {studentTable.filter(_.id === student.id).update(student)}
   }
 
-  def drop = db.run{studentTable.schema.drop}
-
 }
 
 trait StudentTable {

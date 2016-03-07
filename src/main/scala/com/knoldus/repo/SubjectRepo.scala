@@ -33,8 +33,6 @@ trait SubjectRepo extends SubjectTable with SubjectAllocationTable{
     db.run{subjectTable.filter(_.id === subject.id).update(subject)}
   }
 
-  def drop = db.run(subjectTable.schema.drop)
-
 }
 
 trait SubjectTable {
