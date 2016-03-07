@@ -1,9 +1,9 @@
 
-INSERT INTO subjects VALUES('Scala',1);
+INSERT INTO subjects VALUES('Scala',null);
 
-INSERT INTO subjects VALUES('Play',2);
+INSERT INTO subjects VALUES('Play',null);
 
-INSERT INTO students VALUES('Prabhat','pk@gmail.com',1);
+INSERT INTO students VALUES('Prabhat','pk@gmail.com',null);
 
 INSERT INTO subject_allocation VALUES(1,1,null);
 

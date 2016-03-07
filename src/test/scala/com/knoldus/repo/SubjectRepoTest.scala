@@ -2,13 +2,13 @@ package com.knoldus.repo
 
 import com.knoldus.connections.H2DBComponent
 import com.knoldus.models.Subject
-import org.scalatest.FunSuite
+import org.scalatest.{BeforeAndAfter, BeforeAndAfterAll, FunSuite}
 import org.scalatest.concurrent.ScalaFutures
 import org.scalatest.time.{Millis, Seconds, Span}
 
 class SubjectRepoTest extends FunSuite with SubjectRepo with H2DBComponent with ScalaFutures{
 
-  implicit val defaultPatience = PatienceConfig(timeout = Span(5, Seconds), interval = Span(500, Millis))
+  implicit val defaultPatience = PatienceConfig(timeout = Span(5, Seconds), interval = Span(100, Millis))
 
   test("Add new Subject ") {
     val response = insert(Subject("Scala"))
@@ -18,7 +18,7 @@ class SubjectRepoTest extends FunSuite with SubjectRepo with H2DBComponent with 
   }
 
   test("Delete a Subject ") {
-    val response = delete(1)
+    val response = delete(2)
     whenReady(response) { subId =>
       assert(subId === 1)
     }
