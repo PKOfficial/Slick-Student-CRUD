@@ -8,7 +8,7 @@ import org.scalatest.time.{Millis, Seconds, Span}
 
 class SubjectRepoTest extends FunSuite with SubjectRepo with H2DBComponent with ScalaFutures{
 
-  implicit val defaultPatience = PatienceConfig(timeout = Span(5, Seconds), interval = Span(100, Millis))
+  implicit val defaultPatience = PatienceConfig(timeout = Span(5, Seconds), interval = Span(500, Millis))
 
   test("Add new Subject ") {
     val response = insert(Subject("Scala"))
