@@ -2,7 +2,6 @@ package com.knoldus.repo
 
 import com.knoldus.connections.DBComponent
 import com.knoldus.models.Subject
-
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 
@@ -44,7 +43,7 @@ trait SubjectTable {
   class SubjectTable(tag: Tag) extends Table[Subject](tag, "subjects") {
     val id = column[Int]("id", O.PrimaryKey, O.AutoInc)
     val name = column[String]("name")
-
+String
     def * = (name, id) <>(Subject.tupled, Subject.unapply)
   }
 

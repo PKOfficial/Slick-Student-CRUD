@@ -1,9 +1,8 @@
 package com.knoldus.repo
 
 import com.knoldus.connections.DBComponent
-import com.knoldus.models.{Subject, Student, SubjectAllocation}
-import scala.collection.concurrent.RDCSS_Descriptor
-import scala.concurrent.ExecutionContext.Implicits.global
+import com.knoldus.models.SubjectAllocation
+
 import scala.concurrent.Future
 
 trait SubjectAllocationRepo extends SubjectAllocationTable with SubjectTable with StudentTable {

@@ -2,7 +2,7 @@ package com.knoldus.repo
 
 import com.knoldus.connections.DBComponent
 import com.knoldus.models.Student
-import scala.concurrent.ExecutionContext.Implicits.global
+
 import scala.concurrent.Future
 
 trait StudentRepo extends StudentTable {

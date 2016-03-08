@@ -24,6 +24,13 @@ class StudentRepoTest extends FunSuite with StudentRepo with H2DBComponent with 
     }
   }
 
+  test("Delete a Invalid Student ") {
+    val response = delete(11)
+    whenReady(response) { stuId =>
+      assert(stuId === 0)
+    }
+  }
+
   test("List All Students ") {
     val response = getAll
     whenReady(response) { list =>
@@ -38,10 +45,24 @@ class StudentRepoTest extends FunSuite with StudentRepo with H2DBComponent with 
     }
   }
 
+  test("Get a Invalid Students ") {
+    val response = getById(11)
+    whenReady(response) { list =>
+      assert(list === None)
+    }
+  }
+
   test("Update a Students ") {
     val response = update(Student("PrabhatKashyap","pk@gmail.com",1))
     whenReady(response) { result =>
       assert(result === 1)
+    }
+  }
+
+  test("Update a Invalid Students ") {
+    val response = update(Student("PrabhatKashyap","pk@gmail.com",12))
+    whenReady(response) { result =>
+      assert(result === 0)
     }
   }
 
